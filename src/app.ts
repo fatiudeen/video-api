@@ -21,7 +21,7 @@ class App {
 
   initRoutes() {
     this.app
-      .route("api/v1/videos")
+      .route("/api/v1/videos")
       .get(async (req: Request, res: Response, next: NextFunction) => {
         try {
           const query = req.query.owner ? { owner: req.query.owner } : {};
@@ -54,7 +54,7 @@ class App {
       );
 
     this.app
-      .route("api/vi/videos/:id")
+      .route("/api/vi/videos/:id")
       .get(
         middlewares.validator(dtos.id),
         async (req: Request, res: Response, next: NextFunction) => {
