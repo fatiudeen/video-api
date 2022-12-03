@@ -20,6 +20,26 @@ class App {
   }
 
   initRoutes() {
+    this.app.get("/", (req, res) => {
+      res.status(200).json({
+        schema: {
+          title: "string",
+          owner: "string",
+          thumbnail: "image",
+          desc: "string",
+          link: "string",
+        },
+        docs: {
+          getAll: "GET /api/v1/videos",
+          getAllForAUser: "GET /api/v1/videos?owner='owner_name'",
+          create: "POST /api/v1/videos multipart/form-data",
+          getOne: "GET /api/v1/videos/:id",
+          update: "PUT /api/v1/videos/:id multipart/form-data",
+          delete: "DELETE /api/v1/videos/:id",
+        },
+      });
+    });
+
     this.app
       .route("/api/v1/videos")
       .get(async (req: Request, res: Response, next: NextFunction) => {
@@ -54,7 +74,7 @@ class App {
       );
 
     this.app
-      .route("/api/vi/videos/:id")
+      .route("/api/v1/videos/:id")
       .get(
         middlewares.validator(dtos.id),
         async (req: Request, res: Response, next: NextFunction) => {
