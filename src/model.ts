@@ -5,7 +5,7 @@ export interface VideoInterface {
   owner: string;
   thumbnail: string;
   desc: string;
-  link: string;
+  video: string;
 }
 
 const schema = new Schema<VideoInterface>({
@@ -13,7 +13,7 @@ const schema = new Schema<VideoInterface>({
   owner: String,
   thumbnail: String,
   desc: String,
-  link: String,
+  video: String,
 });
 
 export const VideoModel = model("video", schema);

@@ -27,7 +27,7 @@ class App {
           owner: "string",
           thumbnail: "image",
           desc: "string",
-          link: "string",
+          video: "string",
         },
         docs: {
           getAll: "GET /api/v1/videos",

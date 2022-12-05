@@ -6,12 +6,12 @@ export default {
     body("title").exists(),
     body("owner").exists(),
     body("desc").exists(),
-    body("link").exists(),
+    body("video").exists(),
   ],
   update: [
     body("title").optional(),
     body("owner").optional(),
     body("desc").optional(),
-    body("link").optional(),
+    body("video").optional(),
   ],
 };
